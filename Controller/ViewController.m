@@ -236,9 +236,9 @@
                                    //根据地址判断是哪一个api
                                    if ([httpUrl isEqualToString:appleAddress]) {
                                        NSMutableArray *dataArray = [NSMutableArray array];
-                                       NSArray *array = dic[@"newslist"];
-                                       for (NSDictionary *d in array) {
-                                           SubScribeModel *model = [[SubScribeModel alloc]initWithDic:d];
+                                       for (int i = 0; i<3; i++) {
+                                           NSString *str = [NSString stringWithFormat:@"%i",i];
+                                           SubScribeModel *model = [[SubScribeModel alloc]initWithDic:dic[str]];
                                            [dataArray addObject:model];
                                        }
                                        [_dataDic setObject:dataArray forKey:@"苹果新闻"];
