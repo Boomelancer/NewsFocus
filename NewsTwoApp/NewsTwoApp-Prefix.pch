@@ -1,0 +1,55 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+#import "QHMainGestureRecognizerViewController.h"
+#import "MyNetWorkRequest.h"
+#endif
+
+#define isIos7      ([[[UIDevice currentDevice] systemVersion] floatValue])
+#define StatusbarSize ((isIos7 >= 7 && __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1)?20.f:0.f)
+
+#define RGBA(R/*红*/, G/*绿*/, B/*蓝*/, A/*透明*/) \
+[UIColor colorWithRed:R/255.f green:G/255.f blue:B/255.f alpha:A]
+//腾讯QQ
+#define kTencentAppID @"1104779377"
+#define kTencentAppKey @"svOLzbyar4lvePa7"
+#define kTencentUserInfor @"kTencentUserInfor"
+//新浪微博
+#define kSinaAppKey             @"3064334372"
+#define kSinaAppSecret          @"c7faec0c1136316a024644076013ab98"
+
+//人人
+
+//微信
+
+//友推
+#define kYouTuiAppId @"736231"
+#define kYouTuiAppSecret @"33ce385916a787f"//邀请码
+#define AppUserID [YouTuiSDK GetImei]  //开发者需要自己定义识别用户的ID
+
+//新闻接口appid
+#define kNewsAppid @"674c9b3aaa1b4425e42ba1be525df445"
+//新闻频道
+#define BaseUrlChannel @"http://apis.baidu.com/showapi_open_bus/channel_news/channel_news"
+//新闻信息接口
+#define BaseUrlNews @"http://apis.baidu.com/showapi_open_bus/channel_news/search_news"
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenheight [UIScreen mainScreen].bounds.size.height
+
+#define REFRESHUI @"refreshUI"  //刷新UI的NSNotificationCenter Name
+#define HEADER @"header"
+#define NAME @"name"
+#define TOKEN @"token"
